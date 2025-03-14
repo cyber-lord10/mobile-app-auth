@@ -1,11 +1,14 @@
+// ignore_for_file: avoid_print
+
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-class LargeBtn extends StatelessWidget {
-  final icon;
-  final text;
-  final bgColor;
-  final textColor;
-  final anchor;
+class LargeBtn extends StatefulWidget {
+  final IconData icon;
+  final String text;
+  final Color bgColor;
+  final Color textColor;
+  final String anchor;
 
   const LargeBtn({
     super.key,
@@ -17,52 +20,68 @@ class LargeBtn extends StatelessWidget {
   });
 
   @override
+  State<LargeBtn> createState() => _LargeBtnState();
+}
+
+class _LargeBtnState extends State<LargeBtn> {
+  final AudioPlayer _audioPlayer = AudioPlayer();
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose();
+    super.dispose();
+  }
+
+  Future<void> _playTapSound() async {
+    try {
+      await _audioPlayer.play(AssetSource('sounds/normal.mp3'));
+      if (mounted) {
+        Navigator.pushNamed(context, widget.anchor);
+      }
+    } catch (e) {
+      // Fallback if audio fails - still navigate
+      if (mounted) {
+        Navigator.pushNamed(context, widget.anchor);
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {
-        Navigator.pushNamed(context, anchor),
-      },
+      onTap: _playTapSound,
       child: Container(
-        height: 55,
-        width: 300,
+        height: 70,
+        margin: EdgeInsets.symmetric(horizontal: 20),
         decoration: BoxDecoration(
             // color: Colors.deepPurpleAccent,
-            color: bgColor,
-            borderRadius: BorderRadius.circular(12)
-        ),
+            color: widget.bgColor,
+            borderRadius: BorderRadius.circular(12)),
         child: Row(
           // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             // Marg(
             SizedBox(
-              height: 55,
-              width: 55,
-
+              height: 70,
+              width: 70,
               child: Icon(
-                icon,
-                color: textColor,
-                size: 28,
+                widget.icon,
+                color: widget.textColor,
+                size: 32,
               ),
             ),
             // ),
             Expanded(
               child: Center(
                 child: Container(
-                  decoration: BoxDecoration(
-                    // border: BoxBorder(
-                    //   right: BorderSide(
-                    //     color: Colors.grey,
-                    //     width: 1.0,
-                    //   ),
-                    // ),
-                  ),
+                  decoration: BoxDecoration(),
                   margin: EdgeInsets.only(right: 55),
                   child: Text(
-                    text,
+                    widget.text,
                     style: TextStyle(
-                      color: textColor,
+                      color: widget.textColor,
                       fontWeight: FontWeight.bold,
-                      fontSize: 22,
+                      fontSize: 25,
                     ),
                   ),
                 ),

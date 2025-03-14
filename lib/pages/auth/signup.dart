@@ -17,7 +17,7 @@ class Signup extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Colors.black, //Theme.of(context).colorScheme.primary,
         foregroundColor: Colors.white,
       ),
     );
