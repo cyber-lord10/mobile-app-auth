@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import '/utils/general/tap_sound.dart';
 
 class LargeBtn extends StatefulWidget {
   final IconData icon;
@@ -24,17 +24,10 @@ class LargeBtn extends StatefulWidget {
 }
 
 class _LargeBtnState extends State<LargeBtn> {
-  final AudioPlayer _audioPlayer = AudioPlayer();
 
-  @override
-  void dispose() {
-    _audioPlayer.dispose();
-    super.dispose();
-  }
-
-  Future<void> _playTapSound() async {
+  Future<void> _navigateContent() async {
     try {
-      await _audioPlayer.play(AssetSource('sounds/normal.mp3'));
+      TapSound.playTapSound();
       if (mounted) {
         Navigator.pushNamed(context, widget.anchor);
       }
@@ -49,16 +42,14 @@ class _LargeBtnState extends State<LargeBtn> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _playTapSound,
+      onTap: _navigateContent,
       child: Container(
         height: 70,
         margin: EdgeInsets.symmetric(horizontal: 20),
         decoration: BoxDecoration(
-            // color: Colors.deepPurpleAccent,
             color: widget.bgColor,
             borderRadius: BorderRadius.circular(12)),
         child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             // Marg(
             SizedBox(

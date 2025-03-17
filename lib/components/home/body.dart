@@ -22,26 +22,29 @@ class HomeBody extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                children: [
-                  Text(
-                    'Welcome',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 26,
-                      // fontStyle: FontStyle.italic,
+              child: Center(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Welcome',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 26,
+                        // fontStyle: FontStyle.italic,
+                      ),
                     ),
-                  ),
-                  Text(
-                    ', get authenticated',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey[800],
-                      fontSize: 26,
-                      // fontStyle: FontStyle.italic,
+                    Text(
+                      ', get authenticated',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey[800],
+                        fontSize: 26,
+                        // fontStyle: FontStyle.italic,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             SizedBox(
