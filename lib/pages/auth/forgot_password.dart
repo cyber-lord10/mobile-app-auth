@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:signup/components/auth/sigin/body.dart';
 
-class Signup extends StatelessWidget {
-  const Signup({super.key});
+class ForgotPassword extends StatelessWidget {
+  const ForgotPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +10,7 @@ class Signup extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: Text(
-          'Sign Up',
+          'Forgot Password',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -17,9 +18,12 @@ class Signup extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.black, //Theme.of(context).colorScheme.primary,
-        foregroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.secondary,
       ),
+
+      body: SignInBody(),
+
     );
   }
 }

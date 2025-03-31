@@ -53,7 +53,11 @@ dev_dependencies:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/icons/logo.jpeg"
+  remove_alpha_ios: true
+  image_path: "assets/images/icons/logo.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "#ffffff"
+#  adaptive_icon_foreground: 'assets/images/icons/foreground_logo.png'
 
 
 # For information on the generic Dart part of this file, see the
@@ -71,6 +75,7 @@ flutter:
   assets:
     - assets/sounds/gestures/
     - assets/images/icons/
+    - assets/images/social/icons/
     - assets/sounds/
     - assets/images/
 

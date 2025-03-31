@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '/pages/auth/signin.dart';
 import '/pages/auth/signup.dart';
 import '/pages/home.dart';
+import '/pages/auth/forgot_password.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -33,6 +34,7 @@ class App extends StatelessWidget {
           seedColor: Colors.black,
           primary: Colors.black,
           secondary: Colors.white,
+          surface:   Colors.grey[300],
         ),
       ),
       initialRoute: '/home',
@@ -40,6 +42,7 @@ class App extends StatelessWidget {
         '/home': (context) => Home(),
         '/auth/signup': (context) => Signup(),
         '/auth/signin': (context) => Signin(),
+        '/auth/forgot_password': (context) => ForgotPassword(),
       },
     );
   }

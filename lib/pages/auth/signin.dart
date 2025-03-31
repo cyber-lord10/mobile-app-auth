@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:signup/components/auth/sigin/app_bar.dart';
+import '/components/auth/sigin/body.dart';
 
 class Signin extends StatelessWidget {
   const Signin({super.key});
@@ -6,21 +8,9 @@ class Signin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
-      appBar: AppBar(
-        title: Text(
-          'Sign in',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 30,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.black, //Theme.of(context).colorScheme.primary,
-        foregroundColor: Colors.white,
-      ),
-
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: SignInAppBar(),
+      body: SignInBody(),
     );
   }
 }

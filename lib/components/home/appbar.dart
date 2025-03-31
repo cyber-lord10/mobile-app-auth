@@ -11,14 +11,14 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       leading: Icon(
         Icons.settings_outlined,
-        size: 30,
+        size: 24,
       ),
       title: Text(
-        'H o m e',
+        'Home',
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
-          fontSize: 30,
+          fontSize: 28,
         ),
       ),
       actions: [
@@ -38,8 +38,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ],
       centerTitle: true,
-      backgroundColor: Colors.deepPurpleAccent,
-      foregroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.primary,
+      foregroundColor: Theme.of(context).colorScheme.secondary,
     );
   }
 }
