@@ -17,7 +17,7 @@ class _SignInBodyState extends State<SignInBody> {
 
   @override
   Widget build(BuildContext context) {
-    final double logoDimension = 50.0;
+    final double logoDimension = 32.0;
 
     return SafeArea(
       child: Center(
@@ -25,12 +25,16 @@ class _SignInBodyState extends State<SignInBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
               Icon(
                 Icons.lock,
                 size: 100,
               ),
-              SizedBox(height: 25,),
+              SizedBox(
+                height: 25,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Flex(
@@ -56,18 +60,24 @@ class _SignInBodyState extends State<SignInBody> {
                   ],
                 ),
               ),
-              SizedBox(height: 25,),
+              SizedBox(
+                height: 25,
+              ),
               AuthTextField(
                 controller: emailController,
                 hintText: 'Email...',
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               AuthTextField(
                 controller: pswdController,
                 hintText: 'Password...',
                 obscure: true,
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
@@ -92,15 +102,19 @@ class _SignInBodyState extends State<SignInBody> {
                   ],
                 ),
               ),
-              SizedBox(height: 25,),
+              SizedBox(
+                height: 25,
+              ),
               LargeBtn(
-                icon: Icons.login,
+                // icon: Icons.login,
                 text: 'Sign In',
                 bgColor: Theme.of(context).colorScheme.primary,
                 textColor: Theme.of(context).colorScheme.secondary,
                 anchor: '/home',
               ),
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
@@ -132,7 +146,9 @@ class _SignInBodyState extends State<SignInBody> {
                   ],
                 ),
               ),
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
@@ -143,24 +159,24 @@ class _SignInBodyState extends State<SignInBody> {
                       width: logoDimension + 40.0,
                       padding: EdgeInsets.all(20.0),
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
-                        borderRadius: BorderRadius.circular(12)
-                      ),
+                          color: Colors.grey.shade200,
+                          borderRadius: BorderRadius.circular(12)),
                       child: Image.asset(
                         'assets/images/social/icons/google.png',
                         width: logoDimension,
                         height: logoDimension,
                       ),
                     ),
-                    SizedBox(width: 30,),
+                    SizedBox(
+                      width: 30,
+                    ),
                     Container(
                       height: logoDimension + 40.0,
                       width: logoDimension + 40.0,
                       padding: EdgeInsets.all(20.0),
                       decoration: BoxDecoration(
                           color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(12)
-                      ),
+                          borderRadius: BorderRadius.circular(12)),
                       child: Image.asset(
                         'assets/images/social/icons/apple.png',
                         width: logoDimension,
@@ -170,7 +186,9 @@ class _SignInBodyState extends State<SignInBody> {
                   ],
                 ),
               ),
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
@@ -181,14 +199,16 @@ class _SignInBodyState extends State<SignInBody> {
                       style: TextStyle(
                         color: Colors.grey[600],
                         fontWeight: FontWeight.w500,
-                        fontSize: 20,
+                        fontSize: 17,
                       ),
                     ),
-                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 10,
+                    ),
                     GestureDetector(
                       onTap: () {
                         TapSound.playTapSound();
-                        if(mounted) {
+                        if (mounted) {
                           Navigator.pushNamed(context, '/auth/signup');
                         }
                       },
@@ -197,14 +217,16 @@ class _SignInBodyState extends State<SignInBody> {
                         style: TextStyle(
                           color: Colors.blue[400],
                           fontWeight: FontWeight.w800,
-                          fontSize: 20,
+                          fontSize: 17,
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 25,),
+              SizedBox(
+                height: 30,
+              ),
             ],
           ),
         ),
